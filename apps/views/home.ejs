@@ -1,0 +1,106 @@
+<html lang="en">
+<style>
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  body {
+    font-family: sans-serif;
+    
+  }
+
+
+  #menu ul {
+    background: #154358;
+    list-style-type: none;
+    text-align: center;
+  }
+
+  #menu li {
+    color: #f1f1f1;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: -5px;
+  }
+
+  #menu a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+  }
+
+  #menu a:hover {
+    background: #F1F1F1;
+    color: #333;
+  }
+
+
+  #menu li {
+    position: relative;
+  }
+
+  .sub-menu>ul {
+    display: none !important;
+  }
+  .tc{
+                border-style: solid;
+                border-color: black;
+                border-width: 1px;
+                border-radius: 5px;
+                position:absolute;
+                
+                
+                height: 36em;
+                width: 85em;
+                box-shadow: 5px 5px 5px #666; 
+            }
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME</title>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ 
+</head>
+
+<body>
+  
+  <div id="menu">
+    <ul style="<%if(Object.keys(Home_data).length!=0){%>display: none;<%}%>">
+          <li><a  href="login">Đăng nhập</a></li>
+          <li><a href="signup">Đăng kí</a></li>
+          <li><a href="#">Hỏi đáp</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="menu">
+      <ul style="<%if(!Object.keys(Home_data).length!=0){%>display: none;<%}%>">
+        <%  
+            console.log(Home_data)
+            if((Home_data)){%>
+          <li><a href="/"  >Chào <%=Home_data.Home_name%></a></li>
+          <li><a  target="hello" href="profile">Tài khoản</a></li>
+          <li><a  href="logout">Đăng xuất</a></li>
+          <li><a target="hello" >Hỏi đáp</a></li>
+          <li><a target="hello" >Liên hệ</a></li>
+       
+      
+      <%}%>
+        
+      </ul>
+      
+    </div><iframe src="https://img4.thuthuatphanmem.vn/uploads/2020/08/28/hinh-anh-welcome-dep_094127533.jpg" name="hello" class="tc">
+
+    </iframe>
+
+</body>
+</html>
